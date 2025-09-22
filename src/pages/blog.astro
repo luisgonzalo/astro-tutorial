@@ -1,9 +1,9 @@
 ---
 import "../styles/global.css";
-import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
-const allPosts = await getCollection("blog");
+import { getBlogPosts } from "../blog/posts.astro";
+const allPosts = await getBlogPosts();
 ---
 
 <BaseLayout pageTitle="Blog">

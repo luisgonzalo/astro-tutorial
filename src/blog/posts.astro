@@ -1,0 +1,9 @@
+---
+import { getCollection } from "astro:content";
+export const getBlogPosts = async () => {
+  const allPosts = await getCollection("blog");
+  return allPosts.toSorted(
+    (a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime()
+  );
+};
+---
